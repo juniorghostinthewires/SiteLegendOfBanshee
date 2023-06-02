@@ -42,7 +42,7 @@
                     
                 </p>
                     
-                    
+    
     <form class="login100-form validate-form">
         <div>
             <span class="login100-form-title">
@@ -167,6 +167,188 @@
             </div>
         </div>
     </form>
+
+    <table>
+        <tr>
+            <th>Imagem</th>
+            <th>Nome</th>
+            <th>Tipo</th>
+            <th>descrição</th>
+        </tr>
+        <tr>
+            <td><img class="character-img" src="./assets/julian.jpeg" alt="Personagem 1"></td>
+            <td class="character-name">julian</td>
+            <td>Espadachim</td>
+            <td>Julian Blanc é um jovem espadachim, filho de Godo e Rosa Blanc. Na história Julian começa sua batalha
+                após ter se tornado surdo, como consequência de um ataque da Banshee que destrói seu vilarejo e mata
+                seus pais.</td>
+        </tr>
+        <tr>
+            <td><img class="character-img" src="./assets/karl.jpeg" alt="Personagem 2"></td>
+            <td class="character-name">Karl</td>
+            <td>Espadachim (SpellBlade)</td>
+            <td>Karl Thoreau é um mestre espadachim aposentado. Lutou durante a guerra de Renania e Goddard, dois
+                impérios inimigos.. Na história Karl é o responsável por salvar Julian e deixa-lo na floresta que faz
+                fronteira entre os reinos.</td>
+        </tr>
+        <tr>
+            <td><img class="character-img" src="./assets/skull.jpeg" alt="Personagem 3"></td>
+            <td class="character-name">Skull</td>
+            <td>Invocação de demônio</td>
+            <td>Invocação de demônio com magia negra feita pela Banshee para destruir humanos.</td>
+        </tr>
+        <tr>
+            <td><img class="character-img" src="./assets/succubus.jpeg" alt="Personagem 3"></td>
+            <td class="character-name">Skull</td>
+            <td>Invocação de demônio</td>
+            <td>Invocação de demônio com magia negra feita pela Banshee para destruir humanos.</td>
+        </tr>
+        <tr>
+            <td><img class="character-img" src="./assets/banshee.jpeg" alt="Personagem 3"></td>
+            <td class="character-name">Banshee</td>
+            <td>Criatura mitica</td>
+            <td>Banshee, anteriormente conhecida apenas como uma lenda nos reinos de Renania e Goddard passou a se
+                tornar uma ameaça real. Invocada por um mago desconhecido, Banshee na história utiliza sua magia e grito
+                ensurdecedor para destruição de todo o vilarejo de Dovalsk no reino de Renania, assim matando os pais de
+                Julian Blanc e mantendo o vilarejo sob seu controle enquanto invoca novos criaturas para seu exército.
+                Só o mais forte espadachim poderá vencê-la.</td>
+        </tr>
+    </table>
+
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+
+        function SavePlanilha() {
+
+
+            var opcoes = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email: document.getElementById('email').value,
+                    nome: document.getElementById('nome').value,
+                    assunto: document.getElementById('assunto').value,
+                    telefone: document.getElementById('telefone').value,
+                    descricao: document.getElementById('descricao').value
+                })
+            };
+
+            // Fazer a requisição usando fetch
+            fetch('https://api.sheetmonkey.io/form/ippTHWYTVwPV944HVe1Qb9', opcoes).then(function (response) {
+
+                    alert("Dados enviados com sucesso!");
+
+            })
+                .catch(function (error) {
+                    alert("Ocorreu um erro na requisição: " + error.message);
+                });
+        }
+    </script>
+    <style>
+        .input100 {
+            font-family: Poppins-Medium;
+            font-size: 15px;
+            line-height: 1;
+            color: #666;
+            display: block;
+            width: 50%;
+            background: #e6e6e6;
+            height: 50px;
+            border-radius: 25px;
+            padding: 0 30px 0 68px;
+        }
+
+        .textArea100 {
+            font-family: Poppins-Medium;
+            font-size: 15px;
+            color: #666;
+            display: block;
+            width: 300%;
+            background: #e6e6e6;
+            height: 50px;
+            border-radius: 25px;
+            padding: 5px 0 5px 0;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            margin-top: 1rem;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .symbol-input100 {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            display: inline-flex;
+            left: 1rem;
+            top: 0.5rem
+        }
+
+        .login100-form-btn {
+            font-family: Montserrat-Bold;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #fff;
+            text-transform: uppercase;
+            width: 15%;
+            height: 50px;
+            border-radius: 25px;
+            background: #57b846;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 25px;
+            -webkit-transition: all .4s;
+            -o-transition: all .4s;
+            -moz-transition: all .4s;
+            transition: all .4s;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        .character-img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        .character-name {
+            font-weight: bold;
+        }
+    </style>
                     <a href="https://www.uninove.br/">CLIQUE AQUI PARA CONHECER A UNINOVE!</a>
                 </div>
         </div>
